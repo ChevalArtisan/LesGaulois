@@ -4,7 +4,7 @@ public class Village {
 	private String nom;
 	private Chef chef;
 	private Gaulois[] villageois;
-	private int nbVillageois;
+	private int nbVillageois=0;
 	
 	public Village(String nom, int nbVillageoisMaximum) {
 		this.nom = nom;
@@ -33,15 +33,15 @@ public class Village {
 	}
 	
 	public void afficherVillageois() {
-		System.out.println("Dans le village du chef"+chef.getNom()+" vivent les légendaires gaulois :");
-		for (int i=0; i<nbVillageois; ++i) {
+		System.out.println("Dans le village du chef"+chef.getNom()+" vivent les legendaires gaulois :");
+		for (int i=0; i<nbVillageois; i++) {
 			System.out.println("-"+villageois[i].getNom());
 		}
 	}
 	
 	
 	public static void main(String[] args) {
-		Village village = new Village("Village des Irréductibles",30);
+		Village village = new Village("Village des Irreductibles",30);
 		//Gaulois gaulois = village.trouverHabitant(30);
 		//Out of bounds
 		Chef abraracourcix = new Chef("Abraracourcix",6,village);
